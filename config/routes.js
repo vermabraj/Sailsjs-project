@@ -36,7 +36,7 @@ module.exports.routes = {
 
   // Authentication
   "POST /login": "UserController.login",
-  "GET /logout": "UserController.logout",
+  "POST /logout": "UserController.logout",
 
   // Views
   "GET /login": "ViewController.login",

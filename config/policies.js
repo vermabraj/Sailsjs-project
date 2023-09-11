@@ -19,9 +19,9 @@ module.exports.policies = {
   // },
 
   User: {
-    allusers: true,
-    get: true,
-    create: "isAuthenticated",
+    allusers: 'isAuthenticated',
+    get: 'isAuthenticated',
+    // create: "isAuthenticated",
     update: "isAuthenticated",
     delete: "isAuthenticated",
   },

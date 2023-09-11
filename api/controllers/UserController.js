@@ -33,15 +33,14 @@ module.exports = {
           expiresIn: "1h", // set the token expiration time
         }
       );
-      req.session.userId = user.id;
       req.session.token = token;
-sails.log.debug("Token set in session:", req.session.token);
-      return res.redirect("/");
+      sails.log.debug("Token set in session:", req.session.token);
+      return res.send("Login successfull");
     })(req, res);
   },
 
   logout: function (req, res) {
-    req.logout();
-    res.redirect("/");
+    req.session.destroy();
+    res.send("Logout successfull");
   },
 };

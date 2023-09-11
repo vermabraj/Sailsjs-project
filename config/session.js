@@ -8,7 +8,7 @@
  * For all available options, see:
  * https://sailsjs.com/config/session
  */
-const MongoStore = require("connect-mongo");
+
 module.exports.session = {
   /***************************************************************************
    *                                                                          *
@@ -17,20 +17,16 @@ module.exports.session = {
    * of your users, forcing them to log in again.                             *
    *                                                                          *
    ***************************************************************************/
-  cookie: {
-    maxAge: 24 * 60 * 60 * 1000, // sets the session to last 24 hours
-  },
-
   secret: "285997d39c7ba5d19d0f7ccd40fd608d",
 
-  // adapter: "mongo",
-  // url: "mongodb://0.0.0.0:27017/sailscrudapp",
-  // collections: "sessions",
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000,
+  },
+  adapter: 'connect-mongodb-session',
+  uri: 'mongodb://127.0.0.1:27017/sailscrudapp',
+  collection: 'sessions',  
 
-  store: new MongoStore({
-    mongoUrl: "mongodb://0.0.0.0:27017/sailscrudapp",
-    collection: "sessions",
-  }),
+  
   /***************************************************************************
    *                                                                          *
    * Customize when built-in session support will be skipped.                 *
