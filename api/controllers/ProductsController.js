@@ -16,9 +16,29 @@ module.exports = {
   create: async function (req, res) {
     try {
       const productData = {
-        name: req.body.name,
-        price: req.body.price,
-        // add other attributes if needed
+        planname: req.body.planname,
+        plancode: req.body.plancode,
+        billinginterval: req.body.billinginterval,
+        billeveryperiod: req.body.billeveryperiod,
+        paymentterm: req.body.select_payment_term,
+        billeveryintervalcycle: req.body.billeveryintervalcycle,
+        flatfeepricingtype: req.body.flatfeepricingtype,
+        perunitflatfee: req.body.perunitflatfee,
+
+        setupfee: req.body.setupfee,
+        addsetupfee: req.body.addsetupfee,
+        addsetuptype: req.body.addsetuptype,
+        trialplan: req.body.trialplan,
+        trialperiodvalid: req.body.trialperiodvalid,
+
+        addtrialfee: req.body.addtrialfee,
+        paymentgatewaytype: req.body.paymentgatewaytype,
+        planStatus: req.body.planStatus,
+        plandescription: req.body.plandescription,
+        planmetadata: req.body.planmetadata,
+        redirecturlafterpayment: req.body.redirecturlafterpayment,
+        paymentfailedsettings: req.body.paymentfailedsettings,
+        planquantity: req.body.planquantity,
       };
 
       const newProduct = await Products.create(productData).fetch();
@@ -27,6 +47,9 @@ module.exports = {
       return res.serverError(error.message);
     }
   },
+
+
+  
   delete: async function (req, res) {
     try {
       if (!req.params.id) {

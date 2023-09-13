@@ -1,18 +1,82 @@
-/**
- * Products.js
- *
- * @description :: A model definition represents a database table/collection.
- * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
- */
-
 module.exports = {
   attributes: {
-    name: {
+    planname: {
+      type: "string",
+      required: true,
+    },
+    plancode: {
+      type: "string",
+      required: true,
+    },
+    billinginterval: {
       type: "string",
     },
-    price: {
+    billeveryperiod: {
+      type: "string",
+    },
+    billeveryintervalcycle: {
       type: "number",
-      required: true,
+    },
+    pricingmodel: {
+      type: "string",
+    },
+    perunitflatfee: {
+      type: "number",
+    },
+    pricedetails: {
+      type: "string",
+    },
+    hassetupfee: {
+      type: "string",
+    },
+    setupfee: {
+      type: "number",
+    },
+    addsetuptype: {
+      type: "string",
+    },
+    trialplan: {
+      type: "boolean",
+    },
+    trialperiodvalid: {
+      type: "number",
+    },
+
+    addtrialfee: {
+      type: "number",
+    },
+    paymentgatewaytype: {
+      type: "string",
+    },
+    selectedpaymentgateways: {
+      type: "string",
+    },
+    subscriptionstatusafterTerm: {
+      type: "string",
+    },
+    paymentterm: {
+      type: "string",
+    },
+    plandescription: {
+      type: "string",
+    },
+    planmetadata: {
+      type: "json",
+    },
+    planStatus: {
+      type: "string",
+    },
+    redirecturlafterpayment: {
+      type: "string",
+    },
+    paymentfailedsettings: {
+      type: "string",
+    },
+    planquantity: {
+      type: "string",
+    },
+    flatfeepricingtype: {
+      type: "string",
     },
   },
 };

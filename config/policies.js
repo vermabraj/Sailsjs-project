@@ -19,7 +19,7 @@ module.exports.policies = {
   // },
 
   User: {
-    allusers: 'isAuthenticated',
+    // allusers: 'isAuthenticated',
     get: 'isAuthenticated',
     // create: "isAuthenticated",
     update: "isAuthenticated",
